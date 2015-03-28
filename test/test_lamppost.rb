@@ -45,7 +45,7 @@ class TestLamppost < Minitest::Test
       it 'gets the docs' do
         docs = 'http://dev.opml.org/spec2.html'
 
-        assert_equal docs, @file_output.head.docs
+        assert_equal URI(docs), @file_output.head.docs
       end
 
       it 'has 3 outlines' do
@@ -71,7 +71,7 @@ class TestLamppost < Minitest::Test
 
         assert_equal 'rss', @output.outlines.first.type
         assert_equal text, @output.outlines.first.text
-        assert_equal xmlUrl, @output.outlines.first.xml_url
+        assert_equal URI(xmlUrl), @output.outlines.first.xml_url
       end
     end
   end
