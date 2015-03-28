@@ -1,5 +1,11 @@
 # Lamppost
 
+[![Gem Version](http://img.shields.io/gem/v/lamppost.svg)](https://rubygems.org/gems/lamppost)
+[![Dependency Status](https://gemnasium.com/farski/lamppost.svg)](https://gemnasium.com/farski/lamppost)
+[![Build Status](https://travis-ci.org/farski/lamppost.svg)](https://travis-ci.org/farski/lamppost)
+[![Code Climate](https://codeclimate.com/github/farski/lamppost/badges/gpa.svg)](https://codeclimate.com/github/farski/lamppost)
+[![Coverage Status](https://coveralls.io/repos/farski/lamppost/badge.svg)](https://coveralls.io/r/farski/lamppost)
+
 Lamppost provides basic OPML parsing. It provides a convenience class for straightforward parsing of XML and files, but because it causes a parser class to get registered with Feedjira, it also allows you to take fetch and parse files with Feedjira itself.
 
 ### Basic Usage
