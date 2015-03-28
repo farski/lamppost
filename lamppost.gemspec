@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['chris@farski.com']
 
   spec.summary       = %q{Simple OPML parsing with Feedjira}
-  spec.description   = %q{Lamppost is an OPML that provides OPML parsing through Feedjira}
+  spec.description   = %q{Lamppost is a basic OPML parser that uses Feedjira}
   spec.homepage      = 'https://github.com/farski/lamppost'
   spec.license       = 'MIT'
 
