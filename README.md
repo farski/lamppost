@@ -1,39 +1,43 @@
 # Lamppost
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lamppost`. To experiment with that code, run `bin/console` for an interactive prompt.
+Lamppost provides basic OPML parsing. It provides a convenience class for straightforward parsing of XML and files, but because it causes a parser class to get registered with Feedjira, it also allows you to take fetch and parse files with Feedjira itself.
 
-TODO: Delete this and the text above, and describe your gem
+### Basic Usage
 
-## Installation
-
-Add this line to your application's Gemfile:
+Pass in either a `File` or a `String`
 
 ```ruby
-gem 'lamppost'
+opml = Lamppost::OPML.new(response.body)
+```
+You have access to any elements from the OPML's `<head>`.
+
+```ruby
+title = opml.head.title
+name = opml.head.owner_name
 ```
 
-And then execute:
+And the outlines from the `<body>`
 
-    $ bundle
+```ruby
+opml.outlines.each do |outline|
+    text = outline.text
+    url = outline.xml_url
+end
+```
 
-Or install it yourself as:
+### Feedjira
 
-    $ gem install lamppost
+Behind the scenes Lampost uses Feedjira parser classes provided by the [feedjira-opml](https://www.github.com/farski/feedjira-opml) gem. That gem registers the OPML parser with Feedjira, so it is available any time Feedjira is used to parse a document.
 
-## Usage
+```ruby
+# Parse against OPML explicitly
+Feedjira::Feed.parse_with(Feedjira::Parser::OPML, response.body)
+```
 
-TODO: Write usage instructions here
+```ruby
+# Feedjira will implicitly match the OPML parser when
+# it finds an <opml> tag
+Feedjira::Feed.parse(response.body)
+```
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/lamppost/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+You could also use Feedjira's `fetch_and_parse` method if you'd like.
