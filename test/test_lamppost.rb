@@ -12,40 +12,40 @@ class TestLamppost < Minitest::Test
       end
 
       it 'gets the same title for strings and files' do
-        assert_equal @string_output.title, @file_output.title
+        assert_equal @string_output.head.title, @file_output.head.title
       end
 
       it 'gets the title' do
         title = 'Head Title'
 
-        assert_equal title, @file_output.title
-        assert_equal title, @string_output.title
+        assert_equal title, @file_output.head.title
+        assert_equal title, @string_output.head.title
       end
 
       it 'has no date_created' do
-        assert_equal nil, @file_output.date_created
+        assert_equal nil, @file_output.head.date_created
       end
 
       it 'has no date_modified' do
-        assert_equal nil, @file_output.date_modified
+        assert_equal nil, @file_output.head.date_modified
       end
 
       it 'has no owner_name' do
-        assert_equal nil, @file_output.owner_name
+        assert_equal nil, @file_output.head.owner_name
       end
 
       it 'has no owner_email' do
-        assert_equal nil, @file_output.owner_name
+        assert_equal nil, @file_output.head.owner_name
       end
 
       it 'has no owner_id' do
-        assert_equal nil, @file_output.owner_id
+        assert_equal nil, @file_output.head.owner_id
       end
 
       it 'gets the docs' do
         docs = 'http://dev.opml.org/spec2.html'
 
-        assert_equal docs, @file_output.docs
+        assert_equal docs, @file_output.head.docs
       end
 
       it 'has 3 outlines' do

@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Chris Kalafarski']
   spec.email         = ['chris@farski.com']
 
-  spec.summary       = %q{Simple OPML parsing with Nokogiri}
-  spec.description   = %q{Lamppost is an OPML that conforms strictly to the OPML 2.0 specification}
+  spec.summary       = %q{Simple OPML parsing with Feedjira}
+  spec.description   = %q{Lamppost is an OPML that provides OPML parsing through Feedjira}
   spec.homepage      = 'https://github.com/farski/lamppost'
   spec.license       = 'MIT'
 
@@ -27,5 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.5'
   spec.add_development_dependency 'rake', '~> 10.0'
 
-  spec.add_runtime_dependency 'nokogiri', '~> 1.6'
+  spec.add_runtime_dependency 'feedjira-opml', '~> 1.0'
 end
