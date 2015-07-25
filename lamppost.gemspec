@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Simple OPML parsing with Feedjira}
   spec.description   = %q{Lamppost is a basic OPML parser that uses Feedjira}
-  spec.homepage      = 'https://github.com/farski/lamppost'
+  spec.homepage      = 'https://github.com/scour/lamppost'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
