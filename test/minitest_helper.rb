@@ -1,7 +1,7 @@
-require 'coveralls'
+require "coveralls"
 Coveralls.wear!
 
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'lamppost'
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+require "lamppost"
 
-require 'minitest/autorun'
+require "minitest/autorun"

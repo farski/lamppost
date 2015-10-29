@@ -1,5 +1,5 @@
-require 'lamppost/version'
-require 'feedjira/opml'
+require "lamppost/version"
+require "feedjira/opml"
 
 module Lamppost
   class OPML
